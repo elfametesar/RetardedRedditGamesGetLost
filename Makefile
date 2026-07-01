@@ -8,6 +8,6 @@ TWEAK_NAME = NoGamePosts
 
 NoGamePosts_FILES = Tweak.x
 NoGamePosts_CFLAGS = -fobjc-arc
-NoGamePosts_FRAMEWORKS = UIKit Foundation
+NoGamePosts_FRAMEWORKS = UIKit Foundation WebKit
 
 include $(THEOS)/makefiles/tweak.mk
