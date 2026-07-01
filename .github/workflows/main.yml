@@ -43,11 +43,12 @@ jobs:
           mkdir -p $THEOS/sdks
           tar -xJf /tmp/sdks.tar.xz -C $THEOS/sdks
           SDK=$(ls $THEOS/sdks | grep iPhoneOS | sort -V | tail -1)
-          echo "THEOS_SDKVERSION=${SDK/iPhoneOS/}" >> $GITHUB_ENV
-          echo "Using SDK: $SDK"
+          SDKVER="${SDK/iPhoneOS/}"
+          SDKVER="${SDKVER/.sdk/}"
+          echo "THEOS_SDKVERSION=${SDKVER}" >> $GITHUB_ENV
 
       - name: Build .deb
-        run: make package FINALPACKAGE=1
+        run: make package FINALPACKAGE=1 THEOS_SDKVERSION=$THEOS_SDKVERSION
 
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v4
