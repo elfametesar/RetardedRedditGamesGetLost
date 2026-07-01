@@ -1,0 +1,9 @@
+Package: com.elfa.nogameposts
+Name: NoGamePosts
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Hides Reddit Games/Interactive posts from feed
+Maintainer: elfa
+Author: elfa
+Section: Tweaks
